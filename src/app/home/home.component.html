@@ -1,0 +1,26 @@
+<div class="container">
+
+  <form [formGroup]="formulario" novalidate (ngSubmit)="pesquisar()" class="h-100 w-100">
+    <div class="row">
+
+      <div class="input-group col-md-4 col-sm-12 center {{ animacao ? 'move-to-top' : '' }} {{ semAnimacao ? 'in-top' : '' }}">
+
+        <input class="form-control py-2 border-right-0 border" type="search" value="{{ valorInput }}" placeholder="Pesquisar" id="pesquisa" name="pesquisa"
+          formControlName="pesquisa">
+        <span class="input-group-append">
+          <button class="btn btn-outline-secondary border-left-0 border" type="submit" [disabled]="!formulario.valid" id="btn-pesquisar">
+            <i class="fa fa-search"></i>
+          </button>
+        </span>
+
+      </div>
+
+    </div>
+
+  </form>
+  
+  <div *ngIf="(animacao || semAnimacao) && estadoInicial">
+    <app-resultado #resultado [resultados]=resultados></app-resultado>
+  </div>
+
+</div>

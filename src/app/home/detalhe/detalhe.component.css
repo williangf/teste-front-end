@@ -1,0 +1,108 @@
+h4 {
+    margin-top: 25px;
+    font-weight: bolder;
+    /* text-shadow: 2px 4px 3px rgba(0,0,0,0.3); */
+}
+
+h5 {
+    margin-top: 25px;
+    padding: 10px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+}
+
+pre {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+iframe {
+    width: 100%;
+    height: 500px;
+    margin-top: 30px;
+}
+
+.btn-voltar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 15px;
+    margin-left: 15px;
+    height: 50px;
+    width: 50px;
+    z-index: 99999;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.like {
+    color: rgb(23, 167, 23);
+    margin-right: 10px;
+}
+
+.dislike {
+    color: rgb(236, 58, 58);
+}
+
+.visualizacao i {
+    font-size: 20px;
+}
+
+.visualizacao {
+    margin-bottom: 50px;
+    padding: 10px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .btn-voltar {
+        margin-top: 30px;
+        margin-left: 15px;
+    }
+    h4 {
+        margin-left: 65px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .btn-voltar {
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+    h4 {
+        margin-left: 65px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .btn-voltar {
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+    h4 {
+        margin-left: 65px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .btn-voltar {
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+    h4 {
+        margin-left: 50px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .btn-voltar {
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+    h4 {
+        margin-left: 0px;
+    }
+}

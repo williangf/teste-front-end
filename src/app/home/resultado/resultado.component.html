@@ -1,0 +1,22 @@
+<div class="row" *ngIf="resultados !== undefined && resultados.length > 0; else semResultados">
+  <div class="col-lg-4 col-md-6 resultado-div" *ngFor="let resultado of resultados">
+    <div class="div-img">
+      <img src="{{ resultado.snippet.thumbnails.high.url }}" />
+    </div>
+    <div class="below-img">
+      <h4 title="{{ resultado.snippet.title }}">{{ resultado.snippet.title | reduzirTexto:20 }}</h4>
+      <h6>{{ resultado.snippet.channelTitle }}</h6>
+      <p>{{ resultado.snippet.description }}</p>
+      <button class="btn btn-dark" [routerLink]="['/detalhe', resultado.id.videoId]">DETALHES DO VÍDEO
+      </button>
+
+    </div>
+  </div>
+</div>
+<div *ngIf="resultados !== undefined && resultados.length > 0" class="col-md-12">
+  <app-paginacao (paginarPesquisa)="paginarPesquisa($event)"></app-paginacao>
+  <app-carrosel #carrosel></app-carrosel>
+</div>
+<ng-template #semResultados>
+  <app-sem-resultado></app-sem-resultado>
+</ng-template>

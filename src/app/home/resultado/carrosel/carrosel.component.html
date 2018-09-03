@@ -1,0 +1,27 @@
+<div class="container" (mouseenter)="onHoverCarrosel(true)" (mouseleave)="onHoverCarrosel(false)">
+  <div class="row">
+
+    <div class="col-1">
+      <button class="btn btn-light float-right" (mousedown)="movimentarCarrosel('prev')" (mouseover)="onHoverCarrosel(true)"><i
+          class="fa fa-chevron-left"></i></button>
+    </div>
+
+    <div class="col-10 conteudo-carrosel">
+      <div class="row justify-content-center" *ngIf="resultados !== undefined && resultados.length !== 0">
+
+        <div class="col-md-4" *ngFor="let resultado of resultadosEmExibicao" [@carrosel]="" [routerLink]="['/detalhe', resultado.id.videoId]">
+          <div class="item-carrosel" [ngStyle]="{'background-image': 'url('+resultado.snippet.thumbnails.high.url+')'}">
+            <p>{{ resultado.snippet.title | reduzirTexto:20 }}</p>
+            <span>{{ resultado.snippet.channelTitle | reduzirTexto:20 }}</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-1">
+      <button class="btn btn-light" (mousedown)="movimentarCarrosel('next')" (mouseover)="onHoverCarrosel(true)"><i class="fa fa-chevron-right"></i></button>
+    </div>
+
+  </div>
+</div>
