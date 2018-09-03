@@ -1,0 +1,18 @@
+<div class="container">
+
+  <div class="row">
+    <button style="display: inline-block;" [routerLink]="['']" class="btn btn-dark btn-voltar"><i class="fa fa-chevron-left"></i></button>
+    <div class="col" *ngFor="let resultado of resultados">
+      <h4 style="display: inline-block;">{{ resultado.snippet.title }}</h4>
+      <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(url)' mozallowfullscreen allowfullscreen></iframe>
+      <h5 class="btn-dark">{{ resultado.snippet.channelTitle }}<span class="float-right dislike"><i class="fa fa-thumbs-down"></i>
+          {{ resultado.statistics.dislikeCount | formatarNumero }}</span><span class="float-right like"><i class="fa fa-thumbs-up"></i>
+          {{ resultado.statistics.likeCount | formatarNumero }}</span></h5>
+      <hr />
+      <pre>{{ resultado.snippet.description }}</pre>
+      <hr />
+      <span class="visualizacao btn-dark"><i class="fa fa-eye"></i> {{ resultado.statistics.viewCount | formatarNumero }}</span>
+      <br>
+    </div>
+  </div>
+</div>
